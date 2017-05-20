@@ -48,11 +48,6 @@
         #messages li:nth-child(odd) {
             background: #eee;
         }
-
-        #container {
-            display: flex;
-            justify-content: space-between;
-        }
     </style>
     <script
             src="https://code.jquery.com/jquery-3.2.1.min.js"
@@ -60,16 +55,7 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<div>
-    <div id="container">
-        <div>
-            <ul id="messages"></ul>
-        </div>
-        <div>
-            <ul id="users"></ul>
-        </div>
-    </div>
-</div>
+<ul id="messages"></ul>
 <form action="">
     <input id="m" autocomplete="off"/>
     <button>Send</button>
