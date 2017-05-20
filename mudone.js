@@ -2,6 +2,7 @@
 
 const Room = require('./room');
 const User = require ('./user');
+const InputHandler = require('./input-handler');
 
 const app = require('express')();
 const http = require('http').Server(app);
@@ -12,17 +13,16 @@ app.get('/', function(req, res){
 });
 
 const room = new Room();
+const inputHandler = new InputHandler(room);
 
 io.on('connection', function(socket){
     const user = new User();
     room.addUser(user);
     io.emit('users', room.getUser());
 
-
     socket.on('chat message', function(msg){
         console.log('message from', user.getName(), ':', msg);
-        // socket.broadcast.emit('hi');
-        io.emit('chat message', msg);
+        inputHandler.processInput(msg, io, socket);
     });
 
     socket.on('disconnect', function(){
