@@ -4,9 +4,12 @@ const Room = require('./room');
 const User = require ('./user');
 const InputHandler = require('./input-handler');
 
-const app = require('express')();
+const express = require('express');
+const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
+
+app.use(express.static('assets'));
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/index.html');
