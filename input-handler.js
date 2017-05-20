@@ -7,16 +7,22 @@ class InputHandler {
         this.room = room;
     }
 
-    processInput(message, io, socket) {
+    processInput(user, message, io, socket) {
         return this.roomService.getResponse(message).then(response => {
-            const intentName = response.result.metadata.intentName;
-            switch (intentName) {
-                case 'People information':
-                    return socket.emit('chat message', this.room.getUserNames());
-                case 'Default Welcome Intent':
+            const action = response.result.action;
+
+            switch (action) {
+                case 'input.people':
+                    return socket.emit('chat message',
+                        this.room.getUsers()
+                            .map(u => u.getName() === user.getName() ? user.getName() + ' (you)' : u.getName())
+                            .join(', ')
+                    );
+                case 'input.welcome':
+                case 'input.unknown':
                     return socket.emit('chat message', response.result.fulfillment.speech);
                 default:
-                    return io.emit('chat message', message);
+                    return io.emit('chat message', 'hm...');
             }
         });
     }

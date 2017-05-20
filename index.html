@@ -72,12 +72,6 @@
         socket.on('chat message', function (msg) {
             $('#messages').append($('<li>').text(msg));
         });
-        socket.on('users', function (users) {
-            $('#users').empty();
-            users.forEach(function (user) {
-                $('#users').append($('<li>').text(user.name));
-            });
-        });
     });
 </script>
 </body>

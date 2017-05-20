@@ -21,11 +21,10 @@ const inputHandler = new InputHandler(room);
 io.on('connection', function(socket){
     const user = new User();
     room.addUser(user);
-    io.emit('users', room.getUser());
 
     socket.on('chat message', function(msg){
         console.log('message from', user.getName(), ':', msg);
-        inputHandler.processInput(msg, io, socket);
+        inputHandler.processInput(user, msg, io, socket);
     });
 
     socket.on('disconnect', function(){
