@@ -13,7 +13,7 @@ class Room {
     }
 
     removeUser(user) {
-        _.remove(this.users, u => u.getName() === user.getName());
+        _.remove(this.users, u => u.getId() === user.getId());
         console.log(user.getName(), 'removed from room. Now', this.users.length, 'users in room');
     }
 
