@@ -17,8 +17,12 @@ class Room {
         console.log(user.getName(), 'removed from room. Now', this.users.length, 'users in room');
     }
 
-    getUser() {
+    getUserNames() {
         return this.users.map(user => user.getName()).join(', ');
+    }
+
+    getUser() {
+        return this.users;
     }
 }
 
