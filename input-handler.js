@@ -8,13 +8,13 @@ class InputHandler {
         this.room = room;
     }
 
-    processInput(user, message, io, socket) {
+    processInput(user, message) {
         return this.roomService.getResponse(message).then(response => {
             const action = response.result.action;
 
             switch (action) {
                 case 'people-info':
-                    return socket.emit('chat message', response.result.fulfillment.speech + ' ' +
+                    return user.getSocket().emit('chat message', response.result.fulfillment.speech + ' ' +
                         this.room.getUsers()
                             .map(u => u.getName() === user.getName() ? user.getName() + ' (you)' : u.getName())
                             .join(', ')
@@ -23,9 +23,9 @@ class InputHandler {
                     return this.processSendMessage(user, response);
                 case 'input.unknown':
                 case 'welcome':
-                    return socket.emit('chat message', response.result.fulfillment.speech);
+                    return user.getSocket().emit('chat message', response.result.fulfillment.speech);
                 default:
-                    return socket.emit('chat message', 'hm...');
+                    return user.getSocket().emit('chat message', 'hm...');
             }
         });
     }
@@ -37,7 +37,7 @@ class InputHandler {
         const actualConversationTarget = _.find(this.room.getUsers(), u => u.getName().toLowerCase() === desiredConversationTargetLc);
         if (actualConversationTarget) {
             user.getSocket().emit('chat message', '@' + desiredConversationTarget + ': ' + message);
-            return user.getSocket().to(actualConversationTarget.getSocket().id).emit('chat message', 'message from ' + user.getName() + ': ' + message);
+            return user.getSocket().to(actualConversationTarget.getSocket().id).emit('chat message', user.getName() + ' says: ' + message);
         }
         return user.getSocket().emit('chat message', `Sorry, there is noone here named ${desiredConversationTarget}`);
     }

@@ -24,7 +24,7 @@ io.on('connection', function(socket){
 
     socket.on('chat message', function(msg){
         console.log('message from', user.getName(), ':', msg);
-        inputHandler.processInput(user, msg, io, socket);
+        inputHandler.processInput(user, msg);
     });
 
     socket.on('disconnect', function(){
