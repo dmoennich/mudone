@@ -19,7 +19,7 @@ const room = new Room();
 const inputHandler = new InputHandler(room);
 
 io.on('connection', function(socket){
-    const user = new User();
+    const user = new User(socket);
     room.addUser(user);
 
     socket.on('chat message', function(msg){

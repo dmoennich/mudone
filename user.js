@@ -6,7 +6,8 @@ const chance = new Chance();
 
 class User {
 
-    constructor(name) {
+    constructor(socket, name) {
+        this.socket = socket;
         this.id = shortid.generate();
         this.name = name || chance.first();
     }
@@ -17,6 +18,10 @@ class User {
 
     getId() {
         return this.id;
+    }
+
+    getSocket() {
+        return this.socket;
     }
 }
 

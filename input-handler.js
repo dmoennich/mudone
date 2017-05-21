@@ -19,9 +19,8 @@ class InputHandler {
                             .map(u => u.getName() === user.getName() ? user.getName() + ' (you)' : u.getName())
                             .join(', ')
                     );
-                case 'start-conversation':
-                    return this.processStartConversation(user, io, socket, response);
-                case 'stop-conversation':
+                case 'send-message':
+                    return this.processSendMessage(user, response);
                 case 'input.unknown':
                 case 'welcome':
                     return socket.emit('chat message', response.result.fulfillment.speech);
@@ -31,14 +30,16 @@ class InputHandler {
         });
     }
 
-    processStartConversation(user, io, socket, response) {
+    processSendMessage(user, response) {
         const desiredConversationTarget = response.result.parameters.conversationTarget;
         const desiredConversationTargetLc = desiredConversationTarget && desiredConversationTarget.toLowerCase();
+        const message = response.result.parameters.message;
         const actualConversationTarget = _.find(this.room.getUsers(), u => u.getName().toLowerCase() === desiredConversationTargetLc);
         if (actualConversationTarget) {
-            return socket.emit('chat message', response.result.fulfillment.speech);
+            user.getSocket().emit('chat message', '@' + desiredConversationTarget + ': ' + message);
+            return user.getSocket().to(actualConversationTarget.getSocket().id).emit('chat message', 'message from ' + user.getName() + ': ' + message);
         }
-        return socket.emit('chat message', `Sorry, there is noone here named ${desiredConversationTarget}`);
+        return user.getSocket().emit('chat message', `Sorry, there is noone here named ${desiredConversationTarget}`);
     }
 
 }
