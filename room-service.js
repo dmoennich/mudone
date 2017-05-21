@@ -2,9 +2,6 @@
 
 const apiai = require('apiai');
 const app = apiai(process.env.API_AI_KEY);
-// const options = {
-//     sessionId: '123'
-// };
 
 class RoomService {
 
