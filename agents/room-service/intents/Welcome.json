@@ -1,0 +1,102 @@
+{
+  "userSays": [
+    {
+      "id": "efd57ca4-8308-4bbe-b226-f930c0ece7ca",
+      "data": [
+        {
+          "text": "How are you?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "f2940cb3-51f7-4843-8ba4-57811b749f8a",
+      "data": [
+        {
+          "text": "How is it going?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ef28210a-853b-4d38-977a-fcf525175508",
+      "data": [
+        {
+          "text": "What\u0027s up"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5e5a7de4-589e-4be5-b329-3ebe78992bc1",
+      "data": [
+        {
+          "text": "Hallo"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "a31698fc-5f8f-4406-bc72-a53465fb373a",
+      "data": [
+        {
+          "text": "Grüezi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "3a13cdda-3c98-40f7-8cf9-cfff19a8af5d",
+      "data": [
+        {
+          "text": "Hello"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "384c0dd5-3f90-437f-81bb-52dd0a07dd31",
+      "data": [
+        {
+          "text": "Hi"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "d1eeb99d-4ae4-4778-8cd7-25384dfcde70",
+  "name": "Welcome",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "welcome",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "Hi",
+            "Hello",
+            "Grüezi!",
+            "Welcome!"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

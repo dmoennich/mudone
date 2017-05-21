@@ -1,0 +1,154 @@
+{
+  "userSays": [
+    {
+      "id": "48aac25f-3d51-4699-ad72-a0f5f36e9159",
+      "data": [
+        {
+          "text": "push",
+          "alias": "action",
+          "meta": "@user_action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "door",
+          "alias": "actionTarget",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "debe8e25-654c-4ced-8e31-d81bb03853ac",
+      "data": [
+        {
+          "text": "kiss",
+          "alias": "action",
+          "meta": "@user_action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Jane",
+          "alias": "actionTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dcf325d9-d4e4-4b61-9002-14bbb08ef8e7",
+      "data": [
+        {
+          "text": "kill",
+          "alias": "action",
+          "meta": "@user_action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "Jim",
+          "alias": "actionTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "40795487-edbc-40ea-85dc-43722a27a315",
+      "data": [
+        {
+          "text": "lick",
+          "alias": "action",
+          "meta": "@user_action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "ice cream",
+          "alias": "actionTarget",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "547c812d-9991-439b-b3d4-0be623f39b07",
+      "data": [
+        {
+          "text": "touch",
+          "alias": "action",
+          "meta": "@user_action",
+          "userDefined": false
+        },
+        {
+          "text": " "
+        },
+        {
+          "text": "box",
+          "alias": "actionTarget",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "8177dd49-1ebb-4e0a-94ec-e5598458bf01",
+  "name": "User interaction",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@user_action",
+          "name": "action",
+          "value": "$action",
+          "isList": false
+        },
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "actionTarget",
+          "value": "$actionTarget",
+          "prompts": [
+            "What do you want to $user_action?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": []
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

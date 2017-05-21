@@ -1,0 +1,51 @@
+{
+  "id": "0d8a2fb3-2abf-4d05-8aee-d015ff22c378",
+  "name": "user_action",
+  "isOverridable": true,
+  "entries": [
+    {
+      "value": "touch",
+      "synonyms": [
+        "touch"
+      ]
+    },
+    {
+      "value": "kill",
+      "synonyms": [
+        "kill"
+      ]
+    },
+    {
+      "value": "kiss",
+      "synonyms": [
+        "kiss"
+      ]
+    },
+    {
+      "value": "push",
+      "synonyms": [
+        "push"
+      ]
+    },
+    {
+      "value": "pull",
+      "synonyms": [
+        "pull"
+      ]
+    },
+    {
+      "value": "lift",
+      "synonyms": [
+        "lift"
+      ]
+    },
+    {
+      "value": "lick",
+      "synonyms": [
+        "lick"
+      ]
+    }
+  ],
+  "isEnum": false,
+  "automatedExpansion": true
+}

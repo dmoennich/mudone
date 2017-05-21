@@ -1,0 +1,149 @@
+{
+  "userSays": [
+    {
+      "id": "a0e352c7-159a-41f3-9061-0800429a36d9",
+      "data": [
+        {
+          "text": "Is nobody here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "50361ff4-8aa8-4887-b7ab-94d6461c6b0a",
+      "data": [
+        {
+          "text": "Am I alone here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "82209234-5481-4d27-ad60-d0043b7ee75b",
+      "data": [
+        {
+          "text": "Am I alone?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2d064eaf-63f9-45dd-a2f2-a26834ba2777",
+      "data": [
+        {
+          "text": "is anyone here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "126f1ecf-a69e-4f07-ae9c-07852485fdf0",
+      "data": [
+        {
+          "text": "is anybody here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "c2877d93-2057-4a1a-b85f-2714baf166a6",
+      "data": [
+        {
+          "text": "who is here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "396c9100-83a0-4632-abe0-33ab0a457a13",
+      "data": [
+        {
+          "text": "are "
+        },
+        {
+          "text": "humans",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        },
+        {
+          "text": " here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "2db0060a-e4b8-4a7b-a552-35814945486d",
+      "data": [
+        {
+          "text": "show me the "
+        },
+        {
+          "text": "people",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d78f4a67-c785-47ca-8c0d-032a95d7da85",
+      "data": [
+        {
+          "text": "show me the "
+        },
+        {
+          "text": "users",
+          "meta": "@sys.ignore",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "1bbbf64a-9ad4-49d2-bc5d-a00624df4249",
+      "data": [
+        {
+          "text": "who else is here?"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "d46f7ddf-cb07-427d-93d9-3dbbd08c304f",
+  "name": "People information",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "people-info",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "These are the people around:",
+            "All the people around:",
+            "These people are here:"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

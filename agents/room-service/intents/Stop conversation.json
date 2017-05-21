@@ -1,0 +1,97 @@
+{
+  "userSays": [
+    {
+      "id": "d1a96bb1-c2f9-4ccc-b21e-06d515ceeb46",
+      "data": [
+        {
+          "text": "cancel conversation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "6b0f6496-f9cb-4f81-a2d2-8050fe8549c9",
+      "data": [
+        {
+          "text": "end conversation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "0dd1829c-4f0c-4f4a-b54f-1b3ada880dd5",
+      "data": [
+        {
+          "text": "stop talking"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "b6af73ec-acf6-44d1-aaa0-f02442d71092",
+      "data": [
+        {
+          "text": "stop talk"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ab176cac-0b18-45c7-aa30-227f786ef910",
+      "data": [
+        {
+          "text": "leave talk"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "ff5f53a9-4c25-46f3-8d41-2f41c02ff31f",
+      "data": [
+        {
+          "text": "stop conversation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "63af336c-4a7c-401a-8f70-7936f878772f",
+      "data": [
+        {
+          "text": "leave conversation"
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "85f60252-da6f-466e-9037-56f209b8ede0",
+  "name": "Stop conversation",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "stop-conversation",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "You left the conversation"
+        }
+      ]
+    }
+  ],
+  "priority": 0,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}

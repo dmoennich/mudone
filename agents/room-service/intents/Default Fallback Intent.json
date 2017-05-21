@@ -1,0 +1,33 @@
+{
+  "userSays": [],
+  "id": "4d165bbf-6c73-43ba-bdd4-cd7bd62280c4",
+  "name": "Default Fallback Intent",
+  "auto": false,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "input.unknown",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "speech": [
+            "I didn\u0027t get that.",
+            "Sorry, could you rephrase this?",
+            "Sorry, I didn\u0027t get that.",
+            "Sorry, what was that?",
+            "What was that?",
+            "Wow, could you rephrase that, please?"
+          ]
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": true,
+  "events": []
+}

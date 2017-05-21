@@ -1,0 +1,130 @@
+{
+  "userSays": [
+    {
+      "id": "c8c2ea98-8101-49c3-ba4e-4a9f0a7efcde",
+      "data": [
+        {
+          "text": "talt to "
+        },
+        {
+          "text": "Edith",
+          "alias": "conversationTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "d1d1026f-b68b-48e0-8598-6bcd81b9e7ab",
+      "data": [
+        {
+          "text": "speak with "
+        },
+        {
+          "text": "Sarah",
+          "alias": "conversationTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "5bed4b03-cb51-4e3f-b6d6-2c35507cb9a0",
+      "data": [
+        {
+          "text": "say to "
+        },
+        {
+          "text": "John",
+          "alias": "conversationTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        },
+        {
+          "text": ": "
+        },
+        {
+          "text": "hi, what\u0027s up?",
+          "alias": "message",
+          "meta": "@sys.any",
+          "userDefined": true
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    },
+    {
+      "id": "dd51c8d2-9ac1-4d54-9f7f-aee05ba10c95",
+      "data": [
+        {
+          "text": "say "
+        },
+        {
+          "text": "hello",
+          "alias": "message",
+          "meta": "@sys.any",
+          "userDefined": true
+        },
+        {
+          "text": " to "
+        },
+        {
+          "text": "Jimmy",
+          "alias": "conversationTarget",
+          "meta": "@sys.any",
+          "userDefined": false
+        }
+      ],
+      "isTemplate": false,
+      "count": 0
+    }
+  ],
+  "id": "4fd10619-50c3-499c-a9b2-b66dea76c0f4",
+  "name": "Send message",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "send-message",
+      "affectedContexts": [],
+      "parameters": [
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "conversationTarget",
+          "value": "$conversationTarget",
+          "prompts": [
+            "To whom do you want to speak?",
+            "What\u0027s the name of the person you want to speak?"
+          ]
+        },
+        {
+          "required": true,
+          "dataType": "@sys.any",
+          "name": "message",
+          "value": "$message",
+          "prompts": [
+            "What do you want to say?"
+          ],
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "speech": "This is the message: $message directed to $conversationTarget"
+        }
+      ]
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "fallbackIntent": false,
+  "events": []
+}
