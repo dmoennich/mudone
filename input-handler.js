@@ -12,17 +12,18 @@ class InputHandler {
             const action = response.result.action;
 
             switch (action) {
-                case 'input.people':
-                    return socket.emit('chat message',
+                case 'people-info':
+                    return socket.emit('chat message', response.result.fulfillment.speech + ' ' +
                         this.room.getUsers()
                             .map(u => u.getName() === user.getName() ? user.getName() + ' (you)' : u.getName())
                             .join(', ')
                     );
-                case 'input.welcome':
+                case 'start-conversation': //TODO check against users
                 case 'input.unknown':
+                case 'welcome':
                     return socket.emit('chat message', response.result.fulfillment.speech);
                 default:
-                    return io.emit('chat message', 'hm...');
+                    return socket.emit('chat message', 'hm...');
             }
         });
     }

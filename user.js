@@ -8,7 +8,7 @@ class User {
 
     constructor(name) {
         this.id = shortid.generate();
-        this.name = name || chance.name();
+        this.name = name || chance.first();
     }
 
     getName() {

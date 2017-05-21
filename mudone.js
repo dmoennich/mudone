@@ -29,7 +29,6 @@ io.on('connection', function(socket){
 
     socket.on('disconnect', function(){
         room.removeUser(user);
-        io.emit('users', room.getUser());
     });
 });
 
