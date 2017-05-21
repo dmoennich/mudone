@@ -23,6 +23,8 @@ class InputHandler {
                             .map(u => u.getName() === user.getName() ? user.getName() + ' (you)' : u.getName())
                             .join(', ')
                     );
+                case 'self-info':
+                    return this.processSelfInformation(user);
                 case 'send-message':
                     return this.processSendMessage(user, response);
                 case 'input.unknown':
@@ -36,6 +38,10 @@ class InputHandler {
 
     handleIncompleteAction(user, response) {
         return user.getSocket().emit('chat message', response.result.fulfillment.speech);
+    }
+
+    processSelfInformation(user) {
+        return user.getSocket().emit('chat message', 'You are ' + user.getName());
     }
 
     processSendMessage(user, response) {
