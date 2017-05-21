@@ -21,6 +21,7 @@ class InputHandler {
                     );
                 case 'start-conversation':
                     return this.processStartConversation(user, io, socket, response);
+                case 'stop-conversation':
                 case 'input.unknown':
                 case 'welcome':
                     return socket.emit('chat message', response.result.fulfillment.speech);
