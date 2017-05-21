@@ -2,15 +2,15 @@
 
 const apiai = require('apiai');
 const app = apiai(process.env.API_AI_KEY);
-const options = {
-    sessionId: '123'
-};
+// const options = {
+//     sessionId: '123'
+// };
 
 class RoomService {
 
-    getResponse(message) {
+    getResponse(message, sessionId) {
         return new Promise(function (resolve, reject) {
-            const request = app.textRequest(message, options);
+            const request = app.textRequest(message, {sessionId: sessionId});
 
             request.on('response', function(response) {
                 console.log(response);

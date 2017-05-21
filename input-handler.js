@@ -9,8 +9,12 @@ class InputHandler {
     }
 
     processInput(user, message) {
-        return this.roomService.getResponse(message).then(response => {
+        return this.roomService.getResponse(message, user.getId()).then(response => {
             const action = response.result.action;
+
+            if (response.result.actionIncomplete) {
+                return this.handleIncompleteAction(user, response);
+            }
 
             switch (action) {
                 case 'people-info':
@@ -28,6 +32,10 @@ class InputHandler {
                     return user.getSocket().emit('chat message', 'hm...');
             }
         });
+    }
+
+    handleIncompleteAction(user, response) {
+        return user.getSocket().emit('chat message', response.result.fulfillment.speech);
     }
 
     processSendMessage(user, response) {
